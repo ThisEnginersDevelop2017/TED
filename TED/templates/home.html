@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+<meta charset="UTF-8">
+{% block title %}Inicio{% endblock %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<div class="container marketing">
+
+  <!-- START THE FEATURETTES -->
+  {% for templates in template_list %}
+  <div class="row featurette">
+    <div class="{{ templates.dtex }}">
+      <h2 class="featurette-heading">{{ templates.name }}<span class="text-muted"></span></h2>
+      <p class="lead">{{ templates.description }}</p>
+    </div>
+    <div class="{{ templates.dimg }}">
+      <img class="featurette-image img-responsive center-block" src="{{ templates.picture.url }}" alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+  {% endfor %}
+
+
+  <!-- Three columns of text below the carousel -->
+
+  <div class="row">
+
+
+    {% for pr in developer %}
+    <div class="col-lg-4 ">
+      <img class="img-circle" src="{{ pr.picture.url }}" alt="Generic placeholder image" width="140" height="140">
+      <h2>{{ pr.name }}</h2>
+      <p>{{ pr.especiality }}</p>
+      <div class="dropup">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Biografia <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu biography">
+          <li>{{ pr.age }}</li>
+          <li>{{ pr.bio }}</li>
+          <li>{{ pr.curriculum }}</li>
+          <li role="separator" class="divider"></li>
+          <li>{{ pr.email }}</li>
+        </ul>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    {% endfor %}
+  </div><!-- /.row -->
+
+
+  <!-- /END THE FEATURETTES -->
+
+</div><!-- /.container -->
+<br/>
+<br/>
+<br/>
+<br/>
+
+{% endblock %}

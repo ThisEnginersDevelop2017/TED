@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block head_title %}About{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="col-sm-3 col-xs-12 pull-right">
+		<p class="lead text-align-center"><h1>Contact</h1>
+		<form method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ form }}
+				
+				<button type="submit" class="btn btn-primary" style="background-color: black; border-color: black">Send</button>
+				
+			</form></p>
+		</br>
+	</div>
+	<div class="col-sm-3">
+		<p class="lead text-align-center" ><h1>Mision</h1><br>Develop software and web pages that good and innovative designs that meet the specific needs of companies that require our services</br></p>
+	</div>
+	<div class="col-sm-3">
+	<p class="lead text-align-center"><h1>Vision</h1><br>Generate web pages and software of quality that integrate standards for the regulation of the same, as well as generate a friendly trio towards the consumer</p>
+	</div>
+	<div class="col-sm-3">
+	<p class="lead text-align-center"><h1>About Us</h1></br>We are a company that starts its operations in a responsible way with limited resources but that seeks an interpersonal growth of each one of the partners involved in this project</p>
+	</div>
+</div>
+{% endblock %}

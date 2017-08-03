@@ -1,0 +1,184 @@
+/*navbar*/
+.nav-container{
+	background-color: black !important;
+
+}
+
+.container{
+	background-color: transparent !important;
+}
+
+.navbar-collapse{
+	background-color: black !important;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+	color: white !important;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+	color: black !important;
+	background-color: white !important;
+}
+
+.navbar-collapse .navbar-nav>.active>a, .navbar-collapse .navbar-nav>.active>a:focus, .navbar-collapse .navbar-nav>.active>a:hover {
+    color: #0a0a0a !important;
+    background-color: rgba(0,0,0,.0001) !important;
+}
+
+.biography{
+	width: 400px;
+	height: 300px;
+}
+.img-tabla{
+	width: 70px;
+	height: 70px;
+}
+
+
+.boton{
+	margin-left: 575px;
+}
+
+.text-align-center{
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.ted{
+
+	width: 60px;
+	height: 45px;
+	margin-top: -13px;
+	margin-right: 0px;
+}
+
+.icono{
+	background: black;
+}
+
+
+.pie{
+	background-color:  black;
+	padding: 50px 0px;
+	bottom: 0;
+	position: relative;
+	width: 100%;
+
+}
+
+.col1{
+	padding-top: 30px;
+}
+
+.icono_footer{
+	width: 150px;
+	height: 150px;
+	margin-right: 20px;
+	margin-left: 30px;
+
+}
+
+.contenedor{
+	width: 800px;
+    margin: auto;
+    position: relative;
+    padding: auto;
+}
+
+.contacto {
+    display: flex;
+    width: 300px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.contacto .icono_footer {
+    display: block;
+}
+
+.contacto a strong {
+    display: block;
+}
+
+.contacto a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 10px 10px 0px;
+}
+
+footer .contenedor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col2>ul>li>a{
+	color: white;
+}
+
+.col2>ul>li>a:hover{
+	color: black !important;
+}
+
+.col3{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	margin-top: 60px;
+}
+
+.redes{
+	display: flex;
+	justify-content: space-between;
+}
+
+.control-label{
+	color:white;
+
+}
+
+@media (max-width: 768px){
+	
+	.contenedor{
+		width: 600px;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.col1{	
+		padding-left: 200px;
+	}
+
+	.col2{
+		margin-top: 20px;
+		margin-left: 20px;
+		text-align: center;
+		padding: 20px;
+	}
+
+	.col3{
+		width: 280px;
+		margin-left: 180px;
+		margin-top: 10px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding: 40px;
+	}
+	
+}
+
+@media (max-width: 425px){
+	.contenedor{
+		width: 350px;
+	}
+
+	.col1{
+		padding-left: 70px;
+	}
+
+	.col3{
+		margin-left: 45px;
+	}
+}

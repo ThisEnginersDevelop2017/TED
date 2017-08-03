@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Desarrolladores{% endblock %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+
+{% block content %}
+        {% if developer_list %}
+        <h1>Lista de Desarrolladores</h1>
+        <table class="table border=1">
+            <thead>
+                
+                    <th>Id</th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Especialidad</th>
+                    <th>Biografia</th>
+                    <th>curriculum</th>
+                    <th>E-mail</th>
+                    <th>Acciones</th>
+                
+            </thead>
+
+            <tbody>
+            {% for developers in developer_list %}
+                <tr>
+                    <td align="center" style="vertical-align:middle">{{ developers.id }}</td>
+                    <td align="center" style="vertical-align:middle"><img class="img-tabla img-responsive" src="{{ developers.picture.url }}" alt=""></td>
+                    <td align="center" style="vertical-align:middle">{{ developers.name }}</td>
+                    <td align="center" style="vertical-align:middle">{{ developers.age }}</td>
+                    <td align="center" style="vertical-align:middle">{{ developers.especiality }}</td>
+                    <td align="center" style="vertical-align:middle">{{ developers.bio }}</td>
+                    <td align="center" style="vertical-align:middle">{{ developers.curriculum }}</td>
+                    <td align="center" style="vertical-align:middle">{{ developers.email }}</td>
+
+                    <td style="vertical-align:middle">
+                    {% buttons %}
+                        <a  href="{% url 'developer:developer_detail' developers.id %}"><button type="submit" class="btn btn-primary">{% bootstrap_icon "eye-open" %}Ver</button>
+                        </a>
+
+                        <a  href="{% url 'developer:edit' developers.id %}"><button type="submit" class="btn btn-primary">{% bootstrap_icon "eye-open" %}Editar</button>
+                        </a>
+
+                        <a href="{% url 'developer:delete' developers.id %}"><button type="submit" class="btn btn-danger">{% bootstrap_icon "erase" %}Borrar</button></a>
+
+                    {% endbuttons %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+            <h1 class="text-align-center">No hay desarrolladores registrados</h1>
+        {% endif %}
+
+        <a href="{% url 'developer:developer_new' %}"><button class="btn btn-primary boton">Nuevo Desarrollador</button></a>
+{% endblock %}  

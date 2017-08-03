@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+{% block title %}Lista de Desarrolladores{% endblock %}
+
+{% block content %}
+
+<div class="ventana">
+    <div class="modal-body" >
+        <a href="#contenido"onclick="closeVentana();"class="cerrar"><h2>&times</h2></a>
+        <div id="datos">
+            <div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if request.user.is_superuser %}
+
+<h1 class="cover-heading text-align-center">Lista de Templates</h1>
+
+<center>
+    <div class="derecha" id="buscar">
+        <input type="search" class="light-table-filter" data-table="order-table" placeholder="Buscar produco">
+    </div>
+</center>
+
+<br/> 
+<div class="container">
+    <table class="table table-bordered order-table table-responsive">
+        <thead>
+            <th class="text-align-center">id</th>
+            <th class="text-align-center"> nombre</th>
+            <th class="text-align-center"> Descripcion</th>
+            <th class="text-align-center"> Imagen</th>
+            <th class="text-align-center"> desarrollador</th>
+            <th class="text-align-center"> url</th>
+            <th>Acciones</th>
+        </thead>
+    <tbody>
+        <tr>
+            {% for templates in template_list %}
+            <td align="center" style="vertical-align:middle">{{ templates.id }}</td>
+            <td align="center" style="vertical-align:middle">{{ templates.name }}</td>
+            <td align="center" style="vertical-align:middle">{{ templates.description }}</td>
+            <td align="center" style="vertical-align:middle"><p>{{ templates.picture }}</p></td>
+            <td align="center" style="vertical-align:middle">{{ templates.developer }}</td>
+            <td align="center" style="vertical-align:middle">{{ templates.url }}</td>
+            <td>
+                {% if request.user.is_superuser %}
+                <a href="{% url "developer:template_edit" templates.id %}"><button type="submit" class="btn btn-primary">Editar</button></a>
+                <br/>
+
+                <br/>
+                <a href="{% url "developer:template_delete" templates.id %}"><button type="submit" class="btn btn-primary">Eliminar</button></a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</div>
+{% else %}
+<div id="contenido">
+    <div class="row column text-center">
+        <h2>Ven y conoce nuestras plantillas</h2>
+        <hr>
+    </div>
+
+    <div class="row small-up-2 large-up-4">
+        {% for templates in template_list %}
+        <div class="column">
+            <img src="{{ templates.picture.url }}" class="img-responsive" />
+            <label style="display: none;" class="id_t">{{ templates.id }}</label>
+            <h5>{{ templates.name }}</h5>
+            <a href="#"><button  class="button expanded boton" onclick="openVentana();" value="{{ templates.id }}">VER DETALLES</button></a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+

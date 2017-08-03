@@ -1,0 +1,45 @@
+{% load static %}
+
+<div class="navbar-wrapper">
+  <div class="nav-container container">
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand icono" href="{% url 'developer:principal' %}"><img class="ted img-responsive" src="{% static 'img/tedblanco.png' %}" alt=""></a> -->
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{% url 'developer:principal' %}"><img class="ted img-responsive" src="{% static 'img/tedblanco.png' %}" alt=""></a></li>
+            <li><a href="{% url 'developer:principal' %}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li><a href="{% url 'developer:about' %}"><i class="fa fa-users" aria-hidden="true"></i> About</a></li>
+            <li><a href="{% url 'developer:contact' %}"><i class="fa fa-address-card" aria-hidden="true"></i> Contact</a></li>
+            <li><a href="{% url 'developer:developer_list' %}"><i class="fa fa-code" aria-hidden="true"></i> Developers</a></li>
+            <li><a href="{% url 'developer:template_list' %}"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Templates</a></li>
+
+            <!--li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                    <li class="dropdown-header">Developers</li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="{% url 'developer:developer_list' %}">Developer List</a></li>
+                    <li><a href="{% url 'developer:developer_new' %}">Add Developer</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Templates</li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="{% url 'developer:template_list' %}">Template List</a></li>
+                    <li><a href="{% url 'developer:template_new' %}">Add Template</a></li>
+              </ul>
+            </li-->
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

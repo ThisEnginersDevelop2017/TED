@@ -1,0 +1,41 @@
+{% load static %}
+{% load crispy_forms_tags %}
+{% load bootstrap3 %}
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="{% static 'js/holder.min.js' %}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+    <script src ="{% static 'js/busqueda.js' %}"></script>
+    <script src = "{% static 'js/jquery.min.js' %}"></script>
+    <script src = "{% static 'js/modal.js' %}"></script>
+    <script src = "{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript">
+
+        $(".boton").click(function () {    
+            var id = $(this).val();
+            $.ajax({
+                url: '/template/modal_ajax/',
+                type: 'GET',
+                data: {id: id },
+
+                success: function(datos){
+                    console.log(datos)
+                    var html="";
+                   for(i=0; i<datos.length; i++){
+                        html+= '<h1 class="text-align-center titulo-modal">'+datos[i].fields.name+'</h1><hr><img class="img-modal img-responsive" src="/MEDIA/'+datos[i].fields.picture+'" ><p class="desc-modal">'+datos[i].fields.description+'</p><a href="" class="url-modal">'+datos[i].fields.url+'</a>';
+                   }
+                   $('#datos').html(html);
+                }
+            });
+        });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'adminlte/base.html' %}
+	{% block title %}Agregar/Editar{% endblock %}
+	{% block content %}
+	{% load bootstrap3 %}
+	{% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <h1>Agregar/Editar Cliente</h1>
+ <div class="row">
+ 	<div class="col-sm-6 col-sm-offset-3">
+		<form method="post">
+	    	{% csrf_token %}
+	    	{% bootstrap_form form %}
+	    	<input type="submit" value="Agregar/Editar" />
+		</form>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+	{% block title %}Detalle del CLiente{% endblock %}
+	{% block content %}
+	{% load bootstrap3 %}
+	{% load staticfiles %}
+     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+	
+	<h1>{{ developer.name }}</h1>
+	<img src="{{ developer.picture.url }}" alt="Aqui va la foto">
+	<h1>{{ developer.age }}</h1>
+	<h1>{{ developer.especialty }}</h1>
+	<h1>{{ developer.bio }}</h1>
+	<h1>{{ developer.curriculum }}</h1>
+	<h1>{{ developer.email }}</h1>
+	
+	{% buttons %}
+		<a href="{% url "clientes:edit" cliente.id %}">
+			<button type="submit" class="ui-button">{% bootstrap_icon "pencil" %}Editar</button>
+		 </a>
+		<a href="{% url "clientes:list" %}">
+			<button type="submit" class="ui-button">{% bootstrap_icon "arrow-left" %}Regresar</button>
+		 </a>
+        {% endbuttons %}
+
+{% endblock %}
+
+
+2017-03-17 15:06

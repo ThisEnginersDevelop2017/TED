@@ -1,0 +1,83 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% include 'head_css.html' %}
+
+<body>
+
+<!-- NAVBAR
+    ================================================== -->
+
+
+    {% block navbar %}
+    {% include 'navbar.html' %}
+    {% endblock %}
+
+    <!-- Carousel
+    ================================================== -->
+    {% include 'carrousel.html' %}
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- FOOTER -->
+    <footer class="pie">
+
+      <div class="contenedor">
+
+        <div class="col1">
+
+            <img src="{% static 'img/tedblanco.png' %}" alt="aqui va ted" class="icono_footer">
+
+            <div class="contacto">
+                <a href="tel:+5558408520"><i class="fa fa-phone-square" aria-hidden="true"></i><span> (55) 58408520</span></a>
+                <a href="tel:+5555480918"><i class="fa fa-phone-square" aria-hidden="true"></i><span> (55) 55480918</span></a>
+                <a href="mailto:thisenginersdevelop@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i><span> thisenginersdevelop@gmail.com</span></a>
+            </div>
+
+        </div>
+
+
+        <div class="col2">
+            <h4 style="color:white">Pages</h4>
+            <ul class="nav">
+                <li><a href="{% url 'developer:principal' %}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                <li><a href="{% url 'developer:about' %}"><i class="fa fa-users" aria-hidden="true"></i> About</a></li>
+                <li><a href="{% url 'developer:contact' %}"><i class="fa fa-address-card" aria-hidden="true"></i> Contact</a></li>
+                <li><a href="{% url 'developer:developer_list' %}"><i class="fa fa-code" aria-hidden="true"></i> Developers</a></li>
+                <li><a href="{% url 'developer:template_list' %}"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Templates</a></li>
+            </ul>
+
+            
+        </div>
+
+        <div class="col3">
+
+            <p><strong style="color: white;">Siguenos en:</strong></p>
+            <div class="redes">
+                <div class="face">
+                  <a href="http://www.facebook.com/ThisEngineersDevelop/?ref=aymt_homepage_panel" target="_blank"><img alt="Siguenos en Facebook" src="https://lh3.googleusercontent.com/-NSLbC_ztNls/T6VX0g6z8AI/AAAAAAAAA0A/_vyIBrmZbuY/s48/facebook48.png" width=48 height=48 /></a>
+              </div>
+              <div class="twit">
+                <a href="http://twitter.com/AQUI_TU_USUARIO" target="_blank"><img src="https://lh6.googleusercontent.com/-vao9pzZoGtk/T6VYC4d1YMI/AAAAAAAAA0U/4rdP2chJido/s48/twitter48.png" width=48 height=48 alt="Síguenos en Twitter" /></a>
+            </div>
+            <div class="insta">
+                <a href="URL_DE_TU_PERFIL_INSTAGRAM" target="_blank"><img alt="Siguenos en Blogger" src="https://lh3.googleusercontent.com/-D-erW-8vZFo/UIqE3H6oUuI/AAAAAAAABgE/4kh346Lwaxk/s48/instagram48.png" width=48 height=48/></a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<p class="pull-right"><a href="#">Back to top</a></p>
+<p style="color:white;">&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+{% include 'footer_js.html' %}
+
+

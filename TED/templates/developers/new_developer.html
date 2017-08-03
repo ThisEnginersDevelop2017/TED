@@ -1,0 +1,25 @@
+
+	{% extends 'base.html' %}
+	{% load staticfiles %}
+	{% load bootstrap3 %}
+	{% load i18n %}
+
+	{% block title %}Agregar Cliente{% endblock %}
+
+	{% block content %}
+	
+  
+	
+<div class="row">
+	<h1 class="text-align-center">Agregar Desarrollador</h1>
+	<div class="col-sm-6  col-sm-offset-3">
+		<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+	        {% bootstrap_form form %}
+	        {% buttons %}
+			 <button type="submit" class="btn btn-primary">{% bootstrap_icon "plus" %}Agregar</button>
+	        {% endbuttons %}
+		</form>
+	</div>
+</div>
+{% endblock %}  

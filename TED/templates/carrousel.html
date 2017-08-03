@@ -1,0 +1,54 @@
+{% load static %}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide img-responsive" src="{% static 'img/teds.png' %}" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>T.E.D</h1>
+              <p>Develop software and web pages that good and innovative designs that meet the specific needs of companies that require our services</p>
+              <p><a class="btn btn-lg btn-primary" style="background-color: black; border-color: black" 
+              href="{% url 'developer:principal' %}" role="button">Home</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="{% static 'img/code.jpg' %}" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Follow Us</h1>
+              <img alt="Siguenos en Facebook" src="https://lh3.googleusercontent.com/-NSLbC_ztNls/T6VX0g6z8AI/AAAAAAAAA0A/_vyIBrmZbuY/s48/facebook48.png" width=48 height=48 /></a>
+              <a href="http://twitter.com/AQUI_TU_USUARIO" target="_blank"><img src="https://lh6.googleusercontent.com/-vao9pzZoGtk/T6VYC4d1YMI/AAAAAAAAA0U/4rdP2chJido/s48/twitter48.png" width=48 height=48 alt="Síguenos en Twitter" /></a>
+              <a href="URL_DE_TU_PERFIL_INSTAGRAM" target="_blank"><img alt="Siguenos en Blogger" src="https://lh3.googleusercontent.com/-D-erW-8vZFo/UIqE3H6oUuI/AAAAAAAABgE/4kh346Lwaxk/s48/instagram48.png" width=48 height=48/></a>
+              <p><a class="btn btn-lg btn-primary" style="background-color: white; border-color: black; color: black" 
+              href="{% url 'developer:contact' %}" role="button">Contact</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="{% static 'img/code2.png' %}" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+             <h1>About Us</h1></br>We are a company that starts its operations in a responsible way with limited resources but that seeks an interpersonal growth of each one of the partners involved in this project</p>
+              <p><a class="btn btn-lg btn-primary" style="background-color: white; border-color: black; color: black"  
+              href="{% url 'developer:about' %}" role="button">About</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="fa fa-angle-left fa-3x glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="fa fa-angle-right fa-3x glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
